@@ -12,7 +12,7 @@ type Cliente{
 
 
 type Query {
-     cliente: Cliente
+     getCliente(id: ID) : Cliente
  }
 
  input ClienteInput{
