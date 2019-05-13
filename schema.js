@@ -7,20 +7,46 @@ type Cliente{
     nombre: String
     apellido:String
     empresa: String
-    email: String
+    email: [emails]
+    tipo: TipoCliente
+    pedido:[pedidos]
 }
+
+type emails{
+    email:String
+}
+type pedidos{
+    producto: String
+    precio: Int
+}
+
 
 
 type Query {
      getCliente(id: ID) : Cliente
  }
-
+    
+enum TipoCliente{
+    CLASICO
+    PREMIUM
+}
+     
+ 
+input pedidosInput{
+    producto: String
+    precio: Int
+}
+input emailsInput{
+    email:String
+}
  input ClienteInput{
     id: ID
     nombre: String!
     apellido:String!
     empresa: String!
-    email: String!
+    email: [emailsInput]
+    tipo: TipoCliente!
+    pedido: [pedidosInput]
  }
 
  type Mutation {
