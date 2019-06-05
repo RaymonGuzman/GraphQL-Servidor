@@ -18,7 +18,7 @@ app.use('/graphql', graphqlHTTP({
    // que schema va a utilizar
    schema,
    
-   //utilziar graphiql
+   //utilizar graphiql
    graphiql: true 
 }));
 
