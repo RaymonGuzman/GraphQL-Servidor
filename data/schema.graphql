@@ -57,4 +57,5 @@ input emailsInput{
      """Te Permite crear Nuevos Clientes """
     crearCliente(input: ClienteInput) : Cliente
     actualizarCliente(input: ClienteInput) : Cliente
+    eliminarCliente(id: ID!) : String
  }
