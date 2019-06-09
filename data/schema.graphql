@@ -56,4 +56,5 @@ input emailsInput{
      #Nombre del Resolver, Input con Datos y Valor que Retorna
      """Te Permite crear Nuevos Clientes """
     crearCliente(input: ClienteInput) : Cliente
+    actualizarCliente(input: ClienteInput) : Cliente
  }
