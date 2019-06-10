@@ -11,6 +11,9 @@ import { rejects } from 'assert';
          return new Cliente(id, ClientesDB[id]);
 
      },
+     getClientes : () => {
+        return Clientes.find({})
+     }
      },
      Mutation: {
     

@@ -20,6 +20,7 @@ type pedidos{
 
 
 type Query {
+     getClientes : [Cliente]
      getCliente(id: ID) : Cliente
  }
    
