@@ -7,9 +7,13 @@ import { rejects } from 'assert';
 export const resolvers = {
    Query: {
 
-      getCliente: ({ id }) => {
-         return new Cliente(id, ClientesDB[id]);
-
+      getCliente: (root, { id }) => {
+         return new Promise((resolve, object) => {
+            Clientes.findById(id, (error, cliente) =>{
+               if(error) rejects(error)
+               else resolve(cliente)
+            });
+         });
       },
       getClientes: (root, {limite}) => {
          return Clientes.find({}).limit(limite);
