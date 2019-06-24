@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 import Header from './components/Header';
 import Clientes from './components/Clientes';
+import NuevoCliente from './components/NuevoCliente';
+import EditarCliente from './components/EditarCliente';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql",
@@ -15,8 +18,21 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+    <Router>
+      <Fragment>
+
     <Header/>
-    <Clientes />
+    <div className="container" >
+    
+    <Switch>
+      <Route exact path="/" component={Clientes}/>
+      <Route exact path="/cliente/nuevo" component={NuevoCliente}/>
+      <Route exact path="/cliente/editar" component={EditarCliente}/>
+      
+    </Switch>
+    </div>
+    </Fragment>
+    </Router>
     </ApolloProvider>
   );
 }
