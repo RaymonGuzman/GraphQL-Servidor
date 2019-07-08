@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Query } from 'react-apollo';
 import { CLIENTES_QUERY } from '../querys';
+import { Link } from 'react-router-dom';
 
 const Clientes = () =>(
 
@@ -25,10 +26,9 @@ const Clientes = () =>(
             </div>
 
             <div className="col-md-4 d-flex justify-content-end">
-            <a className="btn btn-success d-block d-md-inline-block">
-            Editar Cliente
+            <Link className="btn btn-success d-block d-md-inline-block" to={`cliente/editar/${item.id}`}> Editar Cliente </Link>
+            
 
-            </a>
 
             </div>
             </div>
