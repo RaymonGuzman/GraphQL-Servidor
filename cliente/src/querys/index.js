@@ -6,7 +6,7 @@ export const CLIENTES_QUERY = gql `{
       nombre
       apellido
       empresa
-      email{email}
+      email
       tipo
     }
   }`;
