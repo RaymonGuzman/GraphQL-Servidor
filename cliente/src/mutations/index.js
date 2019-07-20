@@ -7,7 +7,7 @@ export const NUEVO_CLIENTE = gql`
     id
     nombre
     apellido
-    empresas
+    empresa
     edad
     tipo
   }
